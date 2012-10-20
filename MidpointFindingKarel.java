@@ -47,12 +47,18 @@ public class MidpointFindingKarel extends SuperKarel {
 				if (frontIsClear()) {
 					move();
 					turnLeft();
+					if (beepersPresent()) {
+						pickBeeper();
+					}
 				}
 			} else {
 				turnRight();
 				if (frontIsClear()) {
 					move();
 					turnRight();
+					if (beepersPresent()) {
+						pickBeeper();
+					}
 				}
 			}
 		}
