@@ -46,33 +46,39 @@ private void putNext() {
 
 private void turnMovePut() {
 	if (facingEast()) {
-		turnLeft();
-		if (frontIsClear()) {
+		if (leftIsClear()) {
+			turnLeft();
 			move();
 			if (leftIsClear()) {
 			turnLeft();
 			move();
+			putBeeper();
 			} else {
-			move();
-			turnRight();
+				if (frontIsClear()) {
+					move();
+					turnRight();
+					putBeeper();
+				}
 			}
 		}
-		putBeeper();
 		
 	} else {
-		turnRight();
-		if (frontIsClear()) {
+		if (rightIsClear()) {
+			turnRight();
 			move();
 			if (rightIsClear()) {
 			turnRight();
 			move();
-			} else {
+			putBeeper();
+			}
+		} else {
+			if (frontIsClear()) {
 			move();
 			turnLeft();
 			}
 		}
-		putBeeper();
-		}
+	}
+
 	
 }
 
