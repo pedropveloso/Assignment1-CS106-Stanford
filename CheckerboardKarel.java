@@ -13,10 +13,17 @@ public class CheckerboardKarel extends SuperKarel {
 
 public void run() {
 	putBeeper();
-	while (frontIsClear()) {
+	while (confirmProceed()) {
 		putNext();
 	}
 }
+
+
+private boolean confirmProceed() {
+
+	return true;
+}
+
 
 private void putNext() {
 	if (frontIsClear()) {
