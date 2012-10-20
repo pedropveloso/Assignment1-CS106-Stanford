@@ -79,18 +79,18 @@ private void turnMovePut() {
 
 private void turnPut() {
 	if (facingEast()) {
-		turnLeft();
-		if (frontIsClear()){
+		if (leftIsClear()){
+			turnLeft();
 			move();
 			turnLeft();
 			putBeeper();
 		}
 	} else {
+		if (rightIsClear()) {
 			turnRight();
-			if (frontIsClear()) {
-				move();
-				turnRight();
-				putBeeper();
+			move();
+			turnRight();
+			putBeeper();
 			}
 		}
 }
