@@ -25,7 +25,6 @@ public class MidpointFindingKarel extends SuperKarel {
 
 	private void doOdd() {
 		cleanRow();
-		
 		while (frontIsClear()) {
 			putBeeper();
 			if (frontIsClear()) {
@@ -69,7 +68,7 @@ public class MidpointFindingKarel extends SuperKarel {
  * No final deste método o Karel está no canto East da rua 1, virado para East
  */
 	private void checkOdd() {	
-		while (facingEast()) {
+		while (frontIsClear()) {
 			if (frontIsClear()) {
 				move();
 				if (frontIsClear()) {
