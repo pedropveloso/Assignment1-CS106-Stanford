@@ -24,7 +24,7 @@ public class MidpointFindingKarel extends SuperKarel {
 
 
 	private void comeBack() {
-		turnLeft();
+		turnRight();
 		while (frontIsClear()) {
 			move();
 		}
