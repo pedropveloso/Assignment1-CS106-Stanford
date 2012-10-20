@@ -25,13 +25,14 @@ public class MidpointFindingKarel extends SuperKarel {
 
 	private void doOdd() {
 		cleanRow();
+		putBeeper();
 		while (frontIsClear()) {
-			putBeeper();
 			if (frontIsClear()) {
 				move();
 				turnLeft();
 				if (frontIsClear()) {
 					move();
+					putBeeper();
 					turnRight();
 				}
 			}
