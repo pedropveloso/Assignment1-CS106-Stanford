@@ -41,7 +41,20 @@ public class MidpointFindingKarel extends SuperKarel {
 		while (frontIsClear()) {
 			move();
 		}
+		turnAround();
+		putBeeper();
+		while (frontIsClear()) {
+			if (frontIsClear()) {
+				move();
+				turnRight();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+					turnLeft();
+				}
+			}
 		}
+	}
 	
 	/*
 	 * a função de cleanRow serve para limpar a primeira linha novamente.
