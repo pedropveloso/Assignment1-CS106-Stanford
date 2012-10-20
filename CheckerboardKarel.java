@@ -14,8 +14,30 @@ public class CheckerboardKarel extends SuperKarel {
 	public void run() {
 		putBeeper();
 		while (frontIsClear()) {
-			putNext();
+			rowEast();
+/*			rowWest();*/
+/*			changeRow();*/
 		}
+/*		teste();
+*/		
+			}
+
+
+	private void rowEast() {
+		while (facingEast()) {
+			if (frontIsClear()) {
+				move();
+				if (frontIsClear())
+					move();
+					putBeeper();
+					
+			}
+		}
+		
+	}
+
+
+	private void teste() {
 		if (leftIsClear()) {
 			turnLeft();
 			move();
@@ -25,93 +47,14 @@ public class CheckerboardKarel extends SuperKarel {
 				turnRight();
 				move();
 				putBeeper();
-
-			}
-		}
-	}
-
-
-	private boolean confirmProceed() {
-		if (facingEast()) {
-			leftIsClear();
-		} else {
-			rightIsClear();
-		}
-		return true;
-	}
-
-
-	private void putNext() {
-		if (frontIsClear()) {
-			move();
-			if (frontIsClear()) {
-				move();
-				putBeeper();
 			} else {
-				turnPut();
-			}
-		} else {
-			turnMovePut();
-			}
-		}
-
-
-	private void turnMovePut() {
-		if (facingEast()) {
-			if (leftIsClear()) {
-				turnLeft();
-				move();
-				if (leftIsClear()) {
-				turnLeft();
+				turnAround();
 				move();
 				putBeeper();
-				} else {
-					if (frontIsClear()) {
-						move();
-						turnRight();
-						putBeeper();
-					}
-				}
-			}
-			
-		} else {
-			if (rightIsClear()) {
-				turnRight();
-				move();
-				if (rightIsClear()) {
-				turnRight();
-				move();
-				putBeeper();
-				}
-			} else {
-				if (frontIsClear()) {
-				move();
-				turnLeft();
-				}
 			}
 		}
-
-		
 	}
 
 
-	private void turnPut() {
-		if (facingEast()) {
-			if (leftIsClear()){
-				turnLeft();
-				move();
-				turnLeft();
-				putBeeper();
-			}
-		} else {
-			if (rightIsClear()) {
-				turnRight();
-				move();
-				turnRight();
-				putBeeper();
-				}
-			}
-	}
-		
-
+	
 	}
