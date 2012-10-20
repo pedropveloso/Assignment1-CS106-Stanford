@@ -23,9 +23,15 @@ public class CheckerboardKarel extends SuperKarel {
 			move();
 			putBeeper();
 		} else {
-			turnRight();
-			move();
-			putBeeper();
+			if (rightIsClear()) {
+				turnRight();
+				move();
+				putBeeper();
+			} else {
+				turnAround();
+				move();
+				putBeeper();
+			}
 		}
 	}
 	private void beepersEast() {
