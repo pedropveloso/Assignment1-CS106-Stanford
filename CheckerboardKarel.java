@@ -33,11 +33,28 @@ public class CheckerboardKarel extends SuperKarel {
 				}
 			}
 		}
-		
+		changeRowEast();
 	}
 
 
-	private void teste() {
+	private void changeRowEast() {
+		turnLeft();
+		if (beepersPresent()) {
+			if (frontIsClear()) {
+				move();
+			}
+		} else {
+			if(frontIsClear()) {
+				move();
+				putBeeper();
+			}
+		}
+	}
+		
+	
+
+
+/*	private void teste() {
 		if (leftIsClear()) {
 			turnLeft();
 			move();
@@ -54,7 +71,7 @@ public class CheckerboardKarel extends SuperKarel {
 			}
 		}
 	}
-
+*/
 
 	
-	}
+}
