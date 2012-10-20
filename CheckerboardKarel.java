@@ -12,7 +12,7 @@ import stanford.karel.*;
 public class CheckerboardKarel extends SuperKarel {
 
 	public void run() {
-		putBeeper();
+/*		putBeeper();*/
 		while (frontIsClear()) {
 			rowEast();
 /*			rowWest();*/
