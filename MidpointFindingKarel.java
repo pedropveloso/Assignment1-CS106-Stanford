@@ -26,16 +26,16 @@ public class MidpointFindingKarel extends SuperKarel {
 	}
 
 	private void cleanBoard() {
+		if (beepersPresent()) {
+			pickBeeper();
+		}
 		while (frontIsClear()) {
-			if (beepersPresent()) {
-				pickBeeper();
-			}
-				if (frontIsClear()) {
-					move();
-					if (beepersPresent()) {
-						pickBeeper();
-					}
+			if (frontIsClear()) {
+				move();
+				if (beepersPresent()) {
+					pickBeeper();
 				}
+			}
 			nextRow();	
 		}
 	}
