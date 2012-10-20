@@ -32,7 +32,6 @@ public class MidpointFindingKarel extends SuperKarel {
 				turnLeft();
 				if (frontIsClear()) {
 					move();
-					putBeeper();
 					turnRight();
 				}
 			}
@@ -50,6 +49,9 @@ public class MidpointFindingKarel extends SuperKarel {
 	 */
 	private void cleanRow() {
 		turnAround();
+		if (beepersPresent()) {
+			pickBeeper();
+		}
 		while (frontIsClear()) {
 			move();
 			if (beepersPresent()) {
