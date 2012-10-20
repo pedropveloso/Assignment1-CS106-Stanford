@@ -18,6 +18,7 @@ public class CheckerboardKarel extends SuperKarel {
 		fillRowEast();
 		fillRowWest();
 		}
+		teste();
 	}
 
 	private void checkColumn() {
@@ -97,5 +98,22 @@ public class CheckerboardKarel extends SuperKarel {
 		}		
 	}
 	
+	private void teste() {
+		if (leftIsClear()) {
+			turnLeft();
+			move();
+			putBeeper();
+		} else {
+			if (rightIsClear()) {
+				turnRight();
+				move();
+				putBeeper();
+			} else {
+				turnAround();
+				move();
+				putBeeper();
+			}
+		}
+	}	
 	
 }
