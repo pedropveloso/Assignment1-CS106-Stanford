@@ -18,13 +18,6 @@ public void run() {
 	}
 }
 
-
-private boolean confirmProceed() {
-
-	return true;
-}
-
-
 private void putNext() {
 	if (frontIsClear()) {
 		move();
