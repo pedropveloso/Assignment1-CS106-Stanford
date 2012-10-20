@@ -21,11 +21,11 @@ public class CheckerboardKarel extends SuperKarel {
 					putBeeper();
 				}
 			}
-			turnleft();
+			up();
 		}
 	}
 
-	private void turnleft() {
+	private void up() {
 		if (frontIsBlocked()) {
 			turnLeft();
 		}
