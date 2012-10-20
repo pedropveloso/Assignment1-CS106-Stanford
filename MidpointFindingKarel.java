@@ -71,7 +71,7 @@ public class MidpointFindingKarel extends SuperKarel {
 		turnAround();
 	}
 		
-	}
+
 
 	/*
 	 * Se o numero de casas for impar, este método cria uma cruz
