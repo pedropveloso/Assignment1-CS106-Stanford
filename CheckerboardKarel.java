@@ -20,11 +20,7 @@ public void run() {
 
 
 private boolean confirmProceed() {
-	if (facingEast()) {
-		leftIsClear();
-	} else {
-		rightIsClear();
-	}
+
 	return true;
 }
 
