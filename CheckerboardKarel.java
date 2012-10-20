@@ -33,7 +33,8 @@ public class CheckerboardKarel extends SuperKarel {
 				}
 			}
 		}
-		changeRowEast();
+		/*changeRowEast();*/
+		turnLeft();
 
 	}
 
