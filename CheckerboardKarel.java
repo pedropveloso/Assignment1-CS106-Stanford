@@ -32,20 +32,21 @@ public class CheckerboardKarel extends SuperKarel {
 					putBeeper();
 				}
 			}
-			changeRowEast();
 		}
-		
+		changeRowEast();
+
 	}
 
 
 	private void changeRowEast() {
-		turnLeft();
 		if (beepersPresent()) {
+			turnLeft();
 			if (frontIsClear()) {
 				move();
 				turnLeft();
 			}
 		} else {
+			turnLeft();
 			if(frontIsClear()) {
 				move();
 				putBeeper();
