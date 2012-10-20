@@ -18,7 +18,6 @@ public class CheckerboardKarel extends SuperKarel {
 		fillRowEast();
 		fillRowWest();
 		}
-		teste();
 	}
 
 	private void checkColumn() {
