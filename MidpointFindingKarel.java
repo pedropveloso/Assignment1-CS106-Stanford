@@ -19,7 +19,16 @@ public class MidpointFindingKarel extends SuperKarel {
 		while (confirmProceed()) {
 			putNext();
 		}
-		putBeeper();
+		comeBack();
+	}
+
+
+	private void comeBack() {
+		turnLeft();
+		while (frontIsClear()) {
+			move();
+		}
+		
 	}
 
 
