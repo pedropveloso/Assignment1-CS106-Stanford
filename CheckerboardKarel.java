@@ -13,6 +13,26 @@ public class CheckerboardKarel extends SuperKarel {
 
 	public void run() {
 		putBeeper();
+		checkColumn();
+		fillRowEast();
+		fillRowWest();
+	}
+
+	private void checkColumn() {
+		if (frontIsBlocked()) {
+			turnLeft();
+			while (frontIsClear()) {
+				move();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+				}
+			}
+		}
+		
+	}
+
+	private void fillRowEast() {
 		while (facingEast()) {
 			if (frontIsClear()) {
 				move();
@@ -21,14 +41,51 @@ public class CheckerboardKarel extends SuperKarel {
 					putBeeper();
 				}
 			}
-			up();
+		changeEast();
+		}
+	}
+	
+	private void fillRowWest () {	
+		while (facingWest()) {
+			if (frontIsClear()) {
+				move();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+				}
+			}
+		changeWest();
 		}
 	}
 
-	private void up() {
+	private void changeWest() {
 		if (frontIsBlocked()) {
-			turnLeft();
-		}
+			turnRight();
+			if (noBeepersPresent()) {
+				move();
+				putBeeper();
+				turnRight();
+			} else {
+				move();
+				turnRight();
+			}
+		}	
 		
 	}
+
+	private void changeEast() {
+		if (frontIsBlocked()) {
+			turnLeft();
+			if (noBeepersPresent()) {
+				move();
+				putBeeper();
+				turnLeft();
+			} else {
+				move();
+				turnLeft();
+			}
+		}		
+	}
+	
+	
 }
