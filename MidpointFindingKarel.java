@@ -52,25 +52,14 @@ public class MidpointFindingKarel extends SuperKarel {
 			}
 			nextRow();	
 		}
-		if (facingEast()) {
-			turnAround();
-		}
-		if (facingSouth()) {
-			turnRight();
-		}
-		if (facingNorth()) {
-			turnRight();
-		}
-		if (facingWest()) {
-			turnAround();
-		}
+		turnAround();
 	}
 
 	private void nextRow() {
 		if (frontIsBlocked()) {
 			if (facingEast()) {
-				turnLeft();
-				if (frontIsClear()) {
+				if (leftIsClear()) {
+					turnLeft();
 					move();
 					turnLeft();
 					if (beepersPresent()) {
@@ -78,8 +67,8 @@ public class MidpointFindingKarel extends SuperKarel {
 					}
 				}
 			} else {
-				turnRight();
-				if (frontIsClear()) {
+				if (rightIsClear()) {
+					turnRight();
 					move();
 					turnRight();
 					if (beepersPresent()) {
