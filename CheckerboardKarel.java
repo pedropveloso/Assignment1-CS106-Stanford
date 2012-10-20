@@ -64,12 +64,16 @@ public class CheckerboardKarel extends SuperKarel {
 		if (frontIsBlocked()) {
 			turnRight();
 			if (noBeepersPresent()) {
-				move();
-				putBeeper();
-				turnRight();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+					turnRight();
+				}
 			} else {
-				move();
-				turnRight();
+				if (frontIsClear()) {
+					move();
+					turnRight();
+				}
 			}
 		}	
 		
@@ -79,12 +83,16 @@ public class CheckerboardKarel extends SuperKarel {
 		if (frontIsBlocked()) {
 			turnLeft();
 			if (noBeepersPresent()) {
-				move();
-				putBeeper();
-				turnLeft();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+					turnLeft();
+				}
 			} else {
-				move();
-				turnLeft();
+				if (frontIsClear()) {
+					move();
+					turnLeft();
+				}
 			}
 		}		
 	}
