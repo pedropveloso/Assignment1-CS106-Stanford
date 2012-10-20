@@ -32,8 +32,9 @@ public class CheckerboardKarel extends SuperKarel {
 					putBeeper();
 				}
 			}
+			changeRowEast();
 		}
-		changeRowEast();
+		
 	}
 
 
