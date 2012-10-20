@@ -21,11 +21,11 @@ public void run() {
 
 private boolean confirmProceed() {
 	if (facingEast()) {
-		leftIsBlocked();
+		leftIsClear();
 	} else {
-		rightIsBlocked();
+		rightIsClear();
 	}
-	return false;
+	return true;
 }
 
 
