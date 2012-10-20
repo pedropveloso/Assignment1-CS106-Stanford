@@ -14,8 +14,10 @@ public class CheckerboardKarel extends SuperKarel {
 	public void run() {
 		putBeeper();
 		checkColumn();
+		while (frontIsClear()) {
 		fillRowEast();
 		fillRowWest();
+		}
 	}
 
 	private void checkColumn() {
