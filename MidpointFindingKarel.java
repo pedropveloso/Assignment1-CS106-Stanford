@@ -52,7 +52,18 @@ public class MidpointFindingKarel extends SuperKarel {
 			}
 			nextRow();	
 		}
-		turnAround();
+		if (facingEast()) {
+			turnAround();
+		}
+		if (facingSouth()) {
+			turnRight();
+		}
+		if (facingNorth()) {
+			turnRight();
+		}
+		if (facingWest()) {
+			turnAround();
+		}
 	}
 
 	private void nextRow() {
