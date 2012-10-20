@@ -12,9 +12,9 @@ import stanford.karel.*;
 public class CheckerboardKarel extends SuperKarel {
 
 public void run() {
-	doRow();
+	putBeeper();
 	while (confirmProceed()) {
-	proceedNext();
+		putNext();
 	}
 }
 
@@ -29,35 +29,71 @@ private boolean confirmProceed() {
 }
 
 
-private void doRow() {
-	while (frontIsClear()) {
-		if (facingEast()) {
+private void putNext() {
+	if (frontIsClear()) {
+		move();
+		if (frontIsClear()) {
+			move();
 			putBeeper();
-			move();
-			move();
 		} else {
-			move();
-			putBeeper();
-			move();
-		}
-	}
-}
-
-private void proceedNext() {
-	if (facingEast()) {
-		if (leftIsClear()) {
-			turnLeft();
-			move();
-			turnLeft();
-			doRow();
+			turnPut();
 		}
 	} else {
-		if (rightIsClear()) {
-			turnRight();
+		turnMovePut();
+		}
+	}
+
+
+private void turnMovePut() {
+	if (facingEast()) {
+		turnLeft();
+		if (frontIsClear()) {
+			move();
+			if (leftIsClear()) {
+			turnLeft();
+			move();
+			} else {
 			move();
 			turnRight();
-			doRow();
-		}	
-	}	
+			}
+		}
+		putBeeper();
+		
+	} else {
+		turnRight();
+		if (frontIsClear()) {
+			move();
+			if (rightIsClear()) {
+			turnRight();
+			move();
+			} else {
+			move();
+			turnLeft();
+			}
+		}
+		putBeeper();
+		}
+	
 }
+
+
+private void turnPut() {
+	if (facingEast()) {
+		turnLeft();
+		if (frontIsClear()){
+			move();
+			turnLeft();
+			putBeeper();
+		}
+	} else {
+			turnRight();
+			if (frontIsClear()) {
+				move();
+				turnRight();
+				putBeeper();
+			}
+		}
+}
+	
+
 }
