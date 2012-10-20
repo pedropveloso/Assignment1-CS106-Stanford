@@ -17,13 +17,59 @@ public class MidpointFindingKarel extends SuperKarel {
 	public void run() {
 		checkOdd();
 		if (beepersPresent()) {
-			doOdd();
-		} /*else {
-			doEven();
-		}*/
+			crossOdd();
+		} else {
+			crossEven();
+		}
 	}
 
-	private void doOdd() {
+	/*
+	 * Se o numero de casas for par, este método cria uma cruz
+	 * com dois beepers numa das casas centrais
+	 * termina com o Karel numa ponta virado para dentro
+	 */
+	private void crossEven() {
+		cleanRow();
+		putBeeper();
+		while (frontIsClear()) {
+			if (frontIsClear()) {
+				move();
+				turnLeft();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+					turnRight();
+				}
+			}
+		}
+		turnAround();
+		while (frontIsClear()) {
+			move();
+		}
+		turnAround();
+		move();
+		putBeeper();
+		while (frontIsClear()) {
+			if (frontIsClear()) {
+				move();
+				turnRight();
+				if (frontIsClear()) {
+					move();
+					putBeeper();
+					turnLeft();
+				}
+			}
+		}
+		turnAround();
+		
+	}
+
+	/*
+	 * Se o numero de casas for impar, este método cria uma cruz
+	 * com dois beepers no centro
+	 * termina com o Karel numa ponta virado para dentro
+	 */
+	private void crossOdd() {
 		cleanRow();
 		putBeeper();
 		while (frontIsClear()) {
@@ -54,6 +100,7 @@ public class MidpointFindingKarel extends SuperKarel {
 				}
 			}
 		}
+		turnAround();
 	}
 	
 	/*
