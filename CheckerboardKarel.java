@@ -21,5 +21,6 @@ public class CheckerboardKarel extends SuperKarel {
 				}
 			}
 		}
+		turnLeft();
 	}
 }
