@@ -26,7 +26,7 @@ public class MidpointFindingKarel extends SuperKarel {
 	/*
 	 * Se o numero de casas for par, este método cria uma cruz
 	 * com dois beepers numa das casas centrais
-	 * termina com o Karel numa ponta virado para dentro
+	 * termina com o Karel na casa 1-1 facing East
 	 */
 	private void crossEven() {
 		cleanRow();
@@ -60,14 +60,23 @@ public class MidpointFindingKarel extends SuperKarel {
 				}
 			}
 		}
+		turnRight();
+		if (frontIsClear()) {
+			move();
+		}
+		turnRight();
+		while (frontIsClear()) {
+			move();
+		}
 		turnAround();
+	}
 		
 	}
 
 	/*
 	 * Se o numero de casas for impar, este método cria uma cruz
 	 * com dois beepers no centro
-	 * termina com o Karel numa ponta virado para dentro
+	 * termina com o Karel na casa 1-1 facing East
 	 */
 	private void crossOdd() {
 		cleanRow();
@@ -99,6 +108,10 @@ public class MidpointFindingKarel extends SuperKarel {
 					turnLeft();
 				}
 			}
+		}
+		turnAround();
+		while (frontIsClear()) {
+			move();
 		}
 		turnAround();
 	}
