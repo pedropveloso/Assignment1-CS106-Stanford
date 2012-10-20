@@ -25,7 +25,7 @@ public class CheckerboardKarel extends SuperKarel {
 
 	private void rowEast() {
 		while (facingEast()) {
-			if (frontIsClear()) {
+			/*if (frontIsClear()) {*/
 				move();
 				if (frontIsClear()) {
 					move();
