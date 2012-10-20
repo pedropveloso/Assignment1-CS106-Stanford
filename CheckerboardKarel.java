@@ -73,6 +73,11 @@ public class CheckerboardKarel extends SuperKarel {
 				if (frontIsClear()) {
 					move();
 					turnRight();
+					if (frontIsClear()) {
+						move();
+						putBeeper();
+					}
+					}
 				}
 			}
 		}	
@@ -92,27 +97,14 @@ public class CheckerboardKarel extends SuperKarel {
 				if (frontIsClear()) {
 					move();
 					turnLeft();
+					if (frontIsClear()) {
+						move();
+						putBeeper();
+					}
 				}
 			}
 		}		
 	}
 	
-	private void teste() {
-		if (leftIsClear()) {
-			turnLeft();
-			move();
-			putBeeper();
-		} else {
-			if (rightIsClear()) {
-				turnRight();
-				move();
-				putBeeper();
-			} else {
-				turnAround();
-				move();
-				putBeeper();
-			}
-		}
-	}	
 	
 }
