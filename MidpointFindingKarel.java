@@ -18,9 +18,9 @@ public class MidpointFindingKarel extends SuperKarel {
 		checkOdd();
 		if (beepersPresent()) {
 			doOdd();
-		} else {
+		} /*else {
 			doEven();
-		}
+		}*/
 	}
 
 	private void doOdd() {
@@ -60,7 +60,7 @@ public class MidpointFindingKarel extends SuperKarel {
 		turnAround();
 	}
 
-	}
+
 
 /*
  * esta função apenas serve para confirmar se é par ou ímpar
