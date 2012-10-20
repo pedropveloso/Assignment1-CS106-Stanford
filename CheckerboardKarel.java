@@ -34,9 +34,11 @@ private void doRow() {
 		if (facingEast()) {
 			putBeeper();
 			move();
+			move();
 		} else {
 			move();
 			putBeeper();
+			move();
 		}
 	}
 }
