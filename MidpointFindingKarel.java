@@ -34,8 +34,33 @@ public class MidpointFindingKarel extends SuperKarel {
 					/*goSouth();*/
 				}
 			}
-			nextRow();	
+			previousRow();	
 		}
+		
+	}
+
+	private void previousRow() {
+		if (frontIsBlocked()) {
+			if (facingEast()) {
+				if (rightIsClear()) {
+					turnRight();
+					move();
+					turnRight();
+					if (beepersPresent()) {
+						pickBeeper();
+					}
+				}
+			} else {
+				if (leftIsClear()) {
+					turnLeft();
+					move();
+					turnLeft();
+					if (beepersPresent()) {
+						pickBeeper();
+					}
+				}
+			}
+		}// TODO Auto-generated method stub
 		
 	}
 
