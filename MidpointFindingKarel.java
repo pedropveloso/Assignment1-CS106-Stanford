@@ -150,7 +150,6 @@ public class MidpointFindingKarel extends SuperKarel {
 		move();
 		putBeeper();
 		while (frontIsClear()) {
-			if (frontIsClear()) {
 				move();
 				turnRight();
 				if (frontIsClear()) {
@@ -159,7 +158,7 @@ public class MidpointFindingKarel extends SuperKarel {
 					turnLeft();
 				}
 			}
-		}
+		
 		turnRight();
 		if (frontIsClear()) {
 			move();
@@ -182,7 +181,7 @@ public class MidpointFindingKarel extends SuperKarel {
 		cleanRow();
 		putBeeper();
 		while (frontIsClear()) {
-			if (frontIsClear()) {
+			
 				move();
 				turnLeft();
 				if (frontIsClear()) {
@@ -190,7 +189,7 @@ public class MidpointFindingKarel extends SuperKarel {
 					putBeeper();
 					turnRight();
 				}
-			}
+			
 		}
 		turnAround();
 		while (frontIsClear()) {
@@ -199,7 +198,7 @@ public class MidpointFindingKarel extends SuperKarel {
 		turnAround();
 		putBeeper();
 		while (frontIsClear()) {
-			if (frontIsClear()) {
+			
 				move();
 				turnRight();
 				if (frontIsClear()) {
@@ -207,7 +206,7 @@ public class MidpointFindingKarel extends SuperKarel {
 					putBeeper();
 					turnLeft();
 				}
-			}
+			
 		}
 		turnAround();
 		while (frontIsClear()) {
@@ -245,13 +244,13 @@ public class MidpointFindingKarel extends SuperKarel {
  */
 	private void checkOdd() {	
 		while (frontIsClear()) {
-			if (frontIsClear()) {
+			
 				move();
 				if (frontIsClear()) {
 					move();
 					putBeeper();
 				}
-			}
+			
 		}
 	}
 
