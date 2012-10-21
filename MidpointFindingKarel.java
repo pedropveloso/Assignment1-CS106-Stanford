@@ -22,22 +22,24 @@ public class MidpointFindingKarel extends SuperKarel {
 			crossEven();
 		}
 		cleanBoard();
+		while (noBeepersPresent()) {
 		finish();
+		}
+		goSouth();
 	}
 
 	private void finish() {
-		while (noBeepersPresent()) {
 			if (frontIsClear()) {
 				move();
-				if (beepersPresent()) {
+/*				if (beepersPresent()) {
 					pickBeeper();
 					goSouth();
-				}
+				}*/
 			}
 			previousRow();	
-		}
-		
 	}
+		
+	
 
 	private void goSouth() {
 		if (facingEast()) {
