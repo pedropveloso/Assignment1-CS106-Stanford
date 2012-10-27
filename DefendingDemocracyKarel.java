@@ -65,7 +65,7 @@ public class DefendingDemocracyKarel extends SuperKarel {
 	 * and if there is, cleans it
 	 */
 	private void checkSquare() {
-		if (beepersPresent()) {
+		while (beepersPresent()) {
 			pickBeeper();
 		}
 	}
